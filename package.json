@@ -1,0 +1,28 @@
+{
+  "name": "socket-control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir build",
+    "start:core": "babel-node src/core/index.js",
+    "start:receive": "babel-node src/receive/index.js timeout",
+    "start:send": "babel-node src/send/index.js timeout src/timeout/index.js"
+  },
+  "author": "Linker",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "i2c-bus": "^5.2.1",
+    "onoff": "^6.0.1",
+    "socket.io": "^3.0.5",
+    "socket.io-client": "^3.0.5"
+  }
+}
