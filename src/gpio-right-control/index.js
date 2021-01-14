@@ -26,6 +26,7 @@ async function main() {
         await i2c.i2cWrite(PCF8591_ADDR, addr.length, addr)
         readBufs[i] = await i2c.i2cRead(PCF8591_ADDR, rbuf.length, rbuf)
     }
+    await i2c.close()
     // join string
     const newValue = readBufs.map(r => r.buffer.readInt8(0)).join(',')
     if (newValue !== oldValue ||
